@@ -12,17 +12,17 @@ export const handleFetch = async (url) => {
 
 export const fetchCategories = async () => {
   const url = `${BASE_URL}/categories.php`
-  const [categories, error] = await handleFetch(url);
-  console.log(categories);
+  const [{ categories }, error] = await handleFetch(url);
+  return [categories, error];
 }
 
 export const fetchMealsByCategory = async (category) => {
   const url = `${BASE_URL}/filter.php?c=${category}`
-  const [meals, error] = await handleFetch(url);
-  console.log(meals);
+  const [{ meals }, error] = await handleFetch(url);
+  return [meals, error]
 }
 export const fetchMealById = async (id) => {
   const url = `${BASE_URL}/lookup.php?i=${id}`
-  const [meal, error] = await handleFetch(url);
-  console.log(meal);
+  const [{ meals: [meal] }, error] = await handleFetch(url);
+  return [meal, error]
 }

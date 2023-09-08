@@ -95,3 +95,78 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+#meals {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 1rem;
+}
+
+.mealCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  min-width: 200px;
+  max-width: 250px;
+}
+
+/* #mealCard img {
+  width: 100%;
+} */
+
+img {
+  width: 100%;
+}
+
+#recipeOverlay {
+  z-index: 10;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  position: fixed;
+  background-color: rgb(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+  margin: 0px;
+}
+
+#recipeOverlayContents {
+  margin: 3% 6%;
+  background: #ccdae7;
+  border-radius: 20px;
+  padding: 3rem;
+}
+
+#overlayImageAndIngredients {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+}
+
+#recipeInstructions, #overlayIngredientsContainer {
+  text-align: left;
+}
+
+#closeOverlayContainer {
+  position: absolute;
+}
+
+#closeOverlayButton {
+  position: absolute;
+  top: -25px;
+  left: -25px;
+}
+
+#overlayImageContainer {
+  max-width: 250px;
+}
+
+.hidden {
+  display: none;
+}
+
+.visibile {
+  display: flex;
+}

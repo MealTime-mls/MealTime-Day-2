@@ -1,12 +1,14 @@
 import './css/style.css'
 import { fetchCategories, fetchMealById, fetchMealsByCategory } from './js/fetch-handlers';
+import { renderStencil, renderMeal } from './js/render-handlers';
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <h1>Meal Time!</h1>
-  </div>
-`
+async function main() {
+  const [meals, error] = await fetchMealsByCategory("Seafood");
+  if (error) {
+    console.log(error);
+  }
+  meals.forEach(renderMeal);
+}
 
-fetchCategories();
-fetchMealsByCategory("Seafood");
-fetchMealById("52772");
+renderStencil()
+main();
